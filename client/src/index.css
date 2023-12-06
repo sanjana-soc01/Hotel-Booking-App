@@ -16,11 +16,16 @@ textarea{
 }
 
 button.primary{
-    background-color: rgb(245, 56, 93);
+    background-color: rgb(32, 101, 160);
+    /* background-color: linear-gradient(to right, red , yellow); */
+    background-image: linear-gradient(to right, rgb(50, 128, 169) , rgb(203, 58, 148));
     @apply bg-primary p-2 w-full text-white rounded-2xl;
+
 }
 
 button{
-    background-color: rgb(245, 56, 93);
+    background-color: rgb(32, 101, 160);/* background-color: rgb(245, 56, 93); */
+    /* background-color: linear-gradient(to right, red , yellow); */
+    background-image: linear-gradient(to right, rgb(50, 128, 169) , rgb(203, 58, 148));
     @apply p-2 rounded-full;
 }

@@ -28,17 +28,18 @@ export default function PlaceGallery({place}){
     }
 
     return(
-        <div className="bg-black text-white flex gap-4 right-16">
+        <div className=" flex gap-4 right-16">
             <div className="flex gap-20 mt-2 px-14">
+                
             {place.photos?.[0] && (
-                            <img onClick={() => setShowAllPhotos(true)} className="p-2 cursor-pointer border border-white h-96 w-120" src={'http://localhost:4000/uploads/'+place.photos[0]} />
+                            <img onClick={() => setShowAllPhotos(true)} className="bg-black p-2 cursor-pointer border border-black h-96 w-120" src={'http://localhost:4000/uploads/'+place.photos[0]} />
                         )}
             {place.photos?.[1] && (
-                            <img onClick={() => setShowAllPhotos(true)} className="p-2 cursor-pointer border border-white h-96 w-120" src={'http://localhost:4000/uploads/'+place.photos[2]}></img>
+                            <img onClick={() => setShowAllPhotos(true)} className="bg-black p-2 cursor-pointer border border-black h-96 w-120" src={'http://localhost:4000/uploads/'+place.photos[1]}></img>
                 
                 )}
 
-            <button onClick={() => setShowAllPhotos(true)} className="bg-white text-black flex gap-1 absolute bottom-36 right-40 rounded-2xl border border-black">
+            <button onClick={() => setShowAllPhotos(true)} className="text-white flex gap-1 absolute bottom-36 right-40 rounded-2xl border border-black">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
                 </svg>

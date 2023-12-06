@@ -89,26 +89,26 @@ export default function PlacesFormPage(){
     <div>
         <AccountNav />
         <form onSubmit={savePlace}>
-            {preInput('Title','Name for your hotel.')}
+            {preInput('Title','Name for your home.')}
             <input className= "border-black" type = "text" placeholder="Title" value={title} onChange={ev=>setTitle(ev.target.value) }/>
 
-            {preInput('Address','Address to this hotel.')}
+            {preInput('Address','Address to this home.')}
             <input className= "border-black" type = "text" placeholder="Address" value={address} onChange={ev=>setAddress(ev.target.value)} />
             
-            {preInput('Photos','Add photos of this hotel.')}
+            {preInput('Photos','Add photos of this home.')}
             <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos}/>
             
 
-            {preInput('Description','Description of this hotel.')}
+            {preInput('Description','Description of this home.')}
             <textarea value={description} onChange={ev=>setDescription(ev.target.value) } />
             
-            {preInput('Perks','Select all the perks of your hotel.')}
+            {preInput('Perks','Select all the perks of your home.')}
             
             <div className="grid mt-2 gap-2 grid-cols-2 md:grid-cols-3 lg-cols-6">
                 <Perks selected={perks} onChange={setPerks}/>
             </div>
             
-            {preInput('Extra info','Any other information of your hotel.')}
+            {preInput('Extra info','Any other information of your home.')}
             <textarea value={extraInfo} onChange={ev=>setExtraInfo(ev.target.value) }/>
             
             {preInput('Check in & out time','Remember to keep some time window.')}

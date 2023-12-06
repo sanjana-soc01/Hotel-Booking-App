@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import BookingWidget from "../BookingWidget";
 import PlaceGallery from "../PlaceGallery";
 import AddressLink from "../AddressLink";
+import ReviewWidget from "../ReviewWidget"
 
 export default function PlacePage() {
     const {id} = useParams();
@@ -23,16 +24,16 @@ export default function PlacePage() {
     
 
     return(
-        <div className="mt-4 bg-black text-white mx-8 px-8 pt-8 rounded-3xl">
+        <div className="mt-4 mx-8 px-8 pt-8 rounded-3xl">
             <h1 className="text-3xl">{place.title}</h1>
-            <AddressLink className="bg-black text-white">
+            <AddressLink className="">
                 {place.address}
             </AddressLink>
-            <PlaceGallery place={place} className="bg-black"/>
+            <PlaceGallery place={place} className=""/>
             <div className="mt-8 mb-8 gap-8 grid grid-cols-1 md:grid-cols-[2fr_1fr]">
                 <div>
                     <div className="my-4">
-                    <h2 className="bg-black text-whitefont-semibold text-2xl">Description</h2>
+                    <h2 className="text-2xl">Description</h2>
                     {place.description}
                 </div>
                     <div className="border border-white rounded-xl p-4">
@@ -49,17 +50,20 @@ export default function PlacePage() {
                         </div>
                     </div>
                     </div>
+                    <div>
+                        <ReviewWidget place={place}/>
+                    </div>
                 </div>
                 <div>
                     <BookingWidget place={place}/>
                 </div>
             </div>
                 
-            <div className="bg-black text-white -mx-8 px-8 py-8 border-t rounded-3xl">
+            <div className="-mx-8 px-8 py-8 border rounded-3xl">
                 <div>
                     <h2 className="font-semibold text-2xl">Extra info</h2>
                 </div>
-                <div className="mt-2 mb-4 text-sm text-gray-400 leading-5">{place.extraInfo}</div>    
+                <div className="mt-2 mb-4 text-sm text-gray-800 leading-5">{place.extraInfo}</div>    
             </div>
             
         </div>

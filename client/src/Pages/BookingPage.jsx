@@ -50,7 +50,7 @@ export default function BookingPage(){
                     </div>
                     <div className="flex gap-24">
                         <button onClick={(e) => deleteBooking(booking._id)} className="p-2 rounded-xl text-white px-14 bg-primary" >Delete booking</button>
-                        <Link className="p-2 rounded-xl text-white px-14 bg-primary" to={'/account/bookings'}>View Your Bookings</Link>
+                        <button className="p-2 rounded-xl text-white px-14 bg-primary"><Link to={'/account/bookings'}>View Your Bookings</Link></button>
                     </div>
                 </div>
                 

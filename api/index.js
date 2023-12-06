@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const imageDownloader = require('image-downloader');
 const multer = require('multer');
 const fs = require('fs');
+const ReviewModel = require('./models/Reviews');
 
 require('dotenv').config();
 const app = express();
@@ -232,6 +233,36 @@ app.delete('/account/bookings/:id', (req,res) => {
 
 // })
 
+
+app.post('/reviews', async (req, res) => {
+  try {
+    const { placeId, reviewText } = req.body;
+    console.log(placeId, reviewText);
+    
+    // Your logic to fetch user data
+    const userData = await getUserDataFromReq(req);
+
+    console.log(userData.id);
+
+    const newReview = new ReviewModel({
+      placeId,
+      user: userData.id,
+      text:reviewText,
+    });
+
+    await newReview.save();
+    res.status(202).json({ message: 'Review saved successfully!' });
+  } catch (error) {
+    console.error('Error saving review:', error);
+    res.status(500).json({ error: 'An error occurred while saving the review.' });
+  }
+});
+
+app.get('/reviews/:id', async (req,res) => {
+  //mongoose.connect(process.env.MONGO_URL);
+    const {id} = req.params;
+    res.json(await ReviewModel.findById(id));
+});
 app.listen(4000);
 
 //uname - booking |-|-| pwd - HotelBooking
